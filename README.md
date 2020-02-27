@@ -1,1 +1,1 @@
-# favorites-backend
+# Project Info
