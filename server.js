@@ -1,5 +1,4 @@
 require('dotenv').config();
-
 // Application Dependencies
 const express = require('express');
 const cors = require('cors');
@@ -54,10 +53,6 @@ app.get('/api/character', async (req, res) => {
     const data = await request.get(`https://rickandmortyapi.com/api/character/?name=${req.query.name}`);
 
     res.json(data.body);
-});
-
-app.listen(process.env.PORT, () => {
-    console.log('listening at ', process.env.PORT);
 });
 
 app.get('/api/me/favorites', async(req, res) => {
@@ -119,4 +114,8 @@ app.post('/api/me/favorites', async(req, res) => {
     } catch (e) {
         console.error(e);
     }
+});
+
+app.listen(process.env.PORT, () => {
+    console.log('listening at ', process.env.PORT);
 });
